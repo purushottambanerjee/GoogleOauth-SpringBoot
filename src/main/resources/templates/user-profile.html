@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .profile-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .profile-card:hover {
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .profile-card h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .profile-card p {
+            color: #555;
+            font-size: 16px;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .profile-card p strong {
+            color: #4CAF50;
+        }
+
+        .google-logo {
+            display: block;
+            margin: 20px auto;
+            width: 120px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .google-logo:hover {
+            opacity: 1;
+        }
+
+        .profile-card .user-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
+            object-fit: cover;
+        }
+
+        .profile-card .user-info {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-card .user-info p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .profile-card .user-info p span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #4285F4;
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #34a3f4;
+        }
+         .side-by-side {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-card">
+    <h2>User Profile</h2>
+
+    <!-- User Image -->
+    <img class="user-image" th:src="${picture}" alt="User Profile Picture" />
+
+    <div class="user-info">
+        <p><strong>Name:</strong> <span th:text="${name}">John Doe</span></p>
+        <p><strong>Email:</strong> <span th:text="${email}">john.doe@example.com</span></p>
+    </div>
+    <div class="side-by-side">
+    <!-- Google Authenticate Logo -->
+    <p>Data Fetched and Authorised By <img class="google-logo" src="https://53.fs1.hubspotusercontent-na1.net/hubfs/53/image8-2.jpg" alt="Authenticate by Google"></p>
+    </div>
+  </div>
+
+</body>
+</html>
